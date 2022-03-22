@@ -91,35 +91,35 @@
                                     -->
                                     Comedor
                                 </div>
-                                <span class="status">
+                                <span id="calefaccion_comedor" class="status">
                                     <span class="status-circle green"></span>
                                     Encendido (20ºC)</span>
                                 <div class="button-wrapper">
-                                    <button class="content-button status-button">Configurar</button>
+                                    <button class="content-button status-button" onclick="calefacion('comedor')">Configurar</button>
                                 </div>
                             </li>
                             <li class="adobe-product">
                                 <div class="products">
                                     Cocina
                                 </div>
-                                <span class="status">
+                                <span id="calefaccion_cocina" class="status">
                                     <span class="status-circle red"></span>
                                     Apagado
                                 </span>
                                 <div class="button-wrapper">
-                                    <button class="content-button status-button">Configurar</button>
+                                    <button onclick="calefacion('cocina')" class="content-button status-button">Configurar</button>
                                 </div>
                             </li>
                             <li class="adobe-product">
                                 <div class="products">
                                     Lavabo
                                 </div>
-                                <span class="status">
+                                <span id="calefaccion_lavabo" class="status">
                                     <span class="status-circle green"></span>
                                         Encendido (22ºC)
                                 </span>
                                 <div class="button-wrapper">
-                                    <button class="content-button status-button">Configurar</button>
+                                    <button onclick="calefacion('lavabo')" class="content-button status-button">Configurar</button>
                                 </div>
                             </li>
                         </ul>
@@ -133,11 +133,11 @@
                                     Comedor
                                 </div>
                                 <span class="status">
-                                    <span class="status-circle green"></span>
+                                    <span id="luces_comedor" class="status-circle green"></span>
                                     Encendida (Modo: CINE)
                                 </span>
                                 <div class="button-wrapper">
-                                    <button class="content-button status-button">
+                                    <button onclick="luces('comedor')" class="content-button status-button">
                                         Configurar
                                     </button>
                                 </div>
@@ -147,11 +147,11 @@
                                     Cocina
                                 </div>
                                 <span class="status">
-                                    <span class="status-circle"></span>
+                                    <span id="luces_cocina" class="status-circle"></span>
                                     Apagada
                                 </span>
                                 <div class="button-wrapper">
-                                    <button class="content-button status-button">
+                                    <button onclick="luces('cocina')" class="content-button status-button">
                                         Configurar
                                     </button>
                                 </div>
@@ -161,11 +161,11 @@
                                     Lavabo
                                 </div>
                                 <span class="status">
-                                    <span class="status-circle"></span>
+                                    <span id="control_lavabo" class="status-circle"></span>
                                     Apagada
                                 </span>
                                 <div class="button-wrapper">
-                                    <button class="content-button status-button">
+                                    <button onclick="luces('lavabo')" class="content-button status-button">
                                         Configurar
                                     </button>
                                 </div>
