@@ -32,9 +32,7 @@
                         <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0" />
                     </svg>
                 </div>
-                <img class="profile-img"
-                    src="./src/img/twitter.png"
-                    alt="">
+                <img class="profile-img" src="./src/img/twitter.png" alt="">
             </div>
         </div>
         <div class="wrapper">
@@ -95,7 +93,8 @@
                                     <span class="status-circle green"></span>
                                     Encendido (20ºC)</span>
                                 <div class="button-wrapper">
-                                    <button class="content-button status-button" onclick="calefacion('comedor')">Configurar</button>
+                                    <button class="content-button status-button"
+                                        onclick="calefacion('comedor')">Configurar</button>
                                 </div>
                             </li>
                             <li class="adobe-product">
@@ -107,7 +106,8 @@
                                     Apagado
                                 </span>
                                 <div class="button-wrapper">
-                                    <button onclick="calefacion('cocina')" class="content-button status-button">Configurar</button>
+                                    <button onclick="calefacion('cocina')"
+                                        class="content-button status-button">Configurar</button>
                                 </div>
                             </li>
                             <li class="adobe-product">
@@ -116,10 +116,11 @@
                                 </div>
                                 <span id="calefaccion_lavabo" class="status">
                                     <span class="status-circle green"></span>
-                                        Encendido (22ºC)
+                                    Encendido (22ºC)
                                 </span>
                                 <div class="button-wrapper">
-                                    <button onclick="calefacion('lavabo')" class="content-button status-button">Configurar</button>
+                                    <button onclick="calefacion('lavabo')"
+                                        class="content-button status-button">Configurar</button>
                                 </div>
                             </li>
                         </ul>
@@ -140,6 +141,32 @@
                                     <button onclick="luces('comedor')" class="content-button status-button">
                                         Configurar
                                     </button>
+                                </div>
+                                <div id="pop-up" class="pop-up">
+                                    <div class="pop-up__title">Configuración de <b>null: null</b>
+                                        <svg onclick="document.getElementById('pop-up').classList.remove('visible')" class="close" width="24" height="24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                            class="feather feather-x-circle">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M15 9l-6 6M9 9l6 6" />
+                                        </svg>
+                                    </div>
+                                    <div class="pop-up__subtitle">
+                                        <p>Estado: <b>null</b></p>
+                                        <p>Temperatura: <b>0ºC</b></p>
+                                    </div>
+                                    <div class="checkbox-wrapper">
+                                        <input type="radio" id="on">
+                                        <label id="apagar" for="check1">Encender</label>
+                                    </div>
+                                    <div class="checkbox-wrapper">
+                                        <input type="range" id="temperatura">
+                                        <label id="temperatura" for="check2">Temperatura (0ºC)</label>
+                                    </div>
+                                    <div class="content-button-wrapper">
+                                        <button onclick="document.getElementById('pop-up').classList.remove('visible')" class="content-button status-button open close">Cancel</button>
+                                        <button onclick="confirm('Quieres guardar la configuración?')" class="content-button status-button">Continue</button>
+                                    </div>
                                 </div>
                             </li>
                             <li class="adobe-product">
