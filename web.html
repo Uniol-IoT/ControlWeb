@@ -4,13 +4,12 @@
 <head>
     <title>Sensores</title>
     <link rel="stylesheet" href="./src/css/master.css">
-    <script src="./src/js/main.js"></script>
 </head>
 
 <body>
     <div class="video-bg">
         <video width="320" height="240" autoplay loop muted>
-            <source src="https://assets.codepen.io/3364143/7btrrd.mp4" type="video/mp4">
+            <source src="./src/video/7btrrd.mp4" type="video/mp4">
             No soporta video.
         </video>
     </div>
@@ -71,7 +70,7 @@
                 </div>
                 <div class="content-wrapper">
                     <div class="content-section">
-                        <div class="content-section-title">Calefacción</div>
+                        <div class="content-section-title">Iluminación</div>
                         <ul>
                             <li class="adobe-product">
                                 <div class="products">
@@ -87,63 +86,42 @@
                                         </g>
                                     </svg>
                                     -->
-                                    Comedor
+                                    Luz
                                 </div>
-                                <span id="calefaccion_comedor" class="status">
-                                    <span class="status-circle green"></span>
-                                    Encendido (20ºC)</span>
+                                <span id="luz" class="status">
+                                    <span class="status-circle"></span>
+                                    Apagado</span>
                                 <div class="button-wrapper">
-                                    <button class="content-button status-button"
-                                        onclick="calefacion('comedor')">Configurar</button>
-                                </div>
-                            </li>
-                            <li class="adobe-product">
-                                <div class="products">
-                                    Cocina
-                                </div>
-                                <span id="calefaccion_cocina" class="status">
-                                    <span class="status-circle red"></span>
-                                    Apagado
-                                </span>
-                                <div class="button-wrapper">
-                                    <button onclick="calefacion('cocina')"
-                                        class="content-button status-button">Configurar</button>
-                                </div>
-                            </li>
-                            <li class="adobe-product">
-                                <div class="products">
-                                    Lavabo
-                                </div>
-                                <span id="calefaccion_lavabo" class="status">
-                                    <span class="status-circle green"></span>
-                                    Encendido (22ºC)
-                                </span>
-                                <div class="button-wrapper">
-                                    <button onclick="calefacion('lavabo')"
-                                        class="content-button status-button">Configurar</button>
+                                    <button id="btn_encendido" class="content-button status-button"
+                                        onclick="iluminacion('encender')">Encender</button>
+                                    <button id="btn_apagado" class="content-button status-button oculto"
+                                        onclick="iluminacion('apagar')">Apagar</button>
                                 </div>
                             </li>
                         </ul>
                     </div>
                     <div class="spacer"></div>
                     <div class="content-section">
-                        <div class="content-section-title">Iluminación</div>
+                        <div class="content-section-title">Persiana</div>
                         <ul>
                             <li class="adobe-product">
                                 <div class="products">
                                     Comedor
                                 </div>
                                 <span class="status">
-                                    <span id="luces_comedor" class="status-circle green"></span>
-                                    Encendida (Modo: CINE)
+                                    <span id="persiana" class="status-circle green"></span>
+                                    Abierta
                                 </span>
                                 <div class="button-wrapper">
-                                    <button onclick="luces('comedor')" class="content-button status-button">
-                                        Configurar
-                                    </button>
+                                    <div class="button-wrapper">
+                                        <button id="btn_arriba" class="content-button status-button"
+                                            onclick="persiana('arriba')">Arriba</button>
+                                        <button id="btn_abajo" class="content-button status-button oculto"
+                                            onclick="persiana('abajo')">Abajo</button>
+                                    </div>
                                 </div>
                                 <div id="pop-up" class="pop-up">
-                                    <div class="pop-up__title">Configuración de <b>null: null</b>
+                                    <div class="pop-up__title">Configuración de <b id="nombre">null: null</b>
                                         <svg onclick="document.getElementById('pop-up').classList.remove('visible')" class="close" width="24" height="24" fill="none" stroke="currentColor"
                                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                             class="feather feather-x-circle">
@@ -153,46 +131,34 @@
                                     </div>
                                     <div class="pop-up__subtitle">
                                         <p>Estado: <b>null</b></p>
-                                        <p>Temperatura: <b>0ºC</b></p>
+                                        <p>Color: <b>default</b></p>
                                     </div>
                                     <div class="checkbox-wrapper">
                                         <input type="radio" id="on">
                                         <label id="apagar" for="check1">Encender</label>
                                     </div>
-                                    <div class="checkbox-wrapper">
-                                        <input type="range" id="temperatura">
-                                        <label id="temperatura" for="check2">Temperatura (0ºC)</label>
-                                    </div>
                                     <div class="content-button-wrapper">
                                         <button onclick="document.getElementById('pop-up').classList.remove('visible')" class="content-button status-button open close">Cancel</button>
-                                        <button onclick="confirm('Quieres guardar la configuración?')" class="content-button status-button">Continue</button>
+                                        <button onclick="confirmar()" class="content-button status-button">Continue</button>
                                     </div>
                                 </div>
                             </li>
+                        </ul>
+                    </div>
+                    <div class="spacer"></div>
+                    <div class="content-section">
+                        <div class="content-section-title">Audio</div>
+                        <ul>
                             <li class="adobe-product">
                                 <div class="products">
-                                    Cocina
+                                    Sistema de sonido
                                 </div>
                                 <span class="status">
-                                    <span id="luces_cocina" class="status-circle"></span>
-                                    Apagada
+                                    <span id="luces_comedor" class="status-circle"></span>
+                                    Apagado
                                 </span>
                                 <div class="button-wrapper">
-                                    <button onclick="luces('cocina')" class="content-button status-button">
-                                        Configurar
-                                    </button>
-                                </div>
-                            </li>
-                            <li class="adobe-product">
-                                <div class="products">
-                                    Lavabo
-                                </div>
-                                <span class="status">
-                                    <span id="control_lavabo" class="status-circle"></span>
-                                    Apagada
-                                </span>
-                                <div class="button-wrapper">
-                                    <button onclick="luces('lavabo')" class="content-button status-button">
+                                    <button onclick="audio()" class="content-button status-button disabled">
                                         Configurar
                                     </button>
                                 </div>
@@ -205,5 +171,5 @@
         <div class="overlay-app"></div>
     </div>
 </body>
-
+<script src="./src/js/main.js"></script>
 </html>

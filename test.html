@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+
+        const jsonUri = "./iluminacion/gpio.json";
+
+        const request = new XMLHttpRequest();
+
+        request.open('GET', jsonUri);
+        request.responseType = "json";
+        request.send();
+
+        request.onload = function () {
+            const reader = request.response;
+            document.getElementById('iluminacion').innerHTML = reader.iluminacion;
+        }
+
+        function uwu() {
+            var jsonUpdate;
+            if (reader.iluminacion == "false") {
+                jsonUpdate = { "iluminacion": "true" }
+            } else {
+                jsonUpdate = { "iluminacion": "false" }
+            }
+            var jsonData = JSON.stringify(jsonUpdate);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <p>Status: <span id="iluminacion">null</span></p>
+    <button onclick="uwu()">Toggle</button>
+</body>
+
+</html>

@@ -160,6 +160,11 @@ body.light-mode .video-bg:before {
     padding: 0 16px;
   }
 }
+
+.disabled {
+  background-color: #ffffff;
+}
+
 .header-menu {
   display: flex;
   align-items: center;
@@ -884,4 +889,8 @@ body.light-mode .video-bg:before {
 
 .spacer {
   margin-top: 30px;
+}
+
+.oculto {
+  display: none;
 }

@@ -1,0 +1,8 @@
+{
+    "iluminacion": "false",
+    "persiana": "abajo",
+    "radio": {
+        "volumen": "10%",
+        "status": "off"
+    }
+}
